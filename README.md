@@ -1,16 +1,52 @@
-# React + Vite
+# VidereUI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A highly cinematic, "Ethereal Flow" inspired landing page built with React, Vite, Tailwind CSS, and GSAP.
 
-Currently, two official plugins are available:
+## Getting Started
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
 
-## React Compiler
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)
+- npm (comes with Node.js)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
 
-## Expanding the ESLint configuration
+1. Clone the repository and navigate into the project directory:
+   ```bash
+   cd VidereUI
+   ```
+2. Install the dependencies:
+   ```bash
+   npm install
+   ```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Running the Development Server
+
+Start the local development server to run and preview the UI:
+
+```bash
+npm run dev
+```
+
+This will run the app in development mode. Open [http://localhost:5173](http://localhost:5173) to view it in your browser. The page will automatically reload when you make changes to the code.
+
+### Build for Production
+
+To build the app for production to the `dist` folder:
+
+```bash
+npm run build
+```
+
+To preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## Technologies Used
+- **React** (v19)
+- **Vite** (Build Tool)
+- **Tailwind CSS** (v3 for styling)
+- **GSAP 3** (Animation engine)
+- **Lucide React** (Icons)

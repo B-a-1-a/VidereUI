@@ -19,7 +19,6 @@ const TitleSlide = ({ onNext, isActive, isDarkMode }) => {
   return (
     <div ref={containerRef} className="w-full h-full flex flex-col items-center justify-center p-12 relative">
       <div className={`absolute top-12 left-1/2 -translate-x-1/2 font-sans font-semibold tracking-[0.2em] text-sm uppercase hero-anim transition-colors duration-700 ${isDarkMode ? 'text-white/50' : 'text-textDark/50'}`}>
-        Videre
       </div>
       <div className="text-center max-w-6xl w-full flex flex-col items-center">
         <h1 className={`font-heading font-black uppercase text-[15vw] leading-[0.85] tracking-[-0.04em] hero-anim mt-4 transition-colors duration-700 ${isDarkMode ? 'text-white' : 'text-textDark'}`}>
@@ -172,7 +171,7 @@ const CursorProtocolScheduler = ({ isActive, isDarkMode }) => {
 
     const tk = gsap.context(() => {
       const tl = gsap.timeline({ repeat: -1, repeatDelay: 1.5 });
-      
+
       gsap.set('.sim-cursor', { opacity: 0, left: '95%', top: '90%' });
       gsap.set('.drag-clip', { opacity: 0, scale: 1 });
       gsap.set('.timeline-gap', { width: 0, margin: 0 });
@@ -188,10 +187,10 @@ const CursorProtocolScheduler = ({ isActive, isDarkMode }) => {
       scanSequence.slice(0, 4).forEach((index, i) => {
         const col = index % 2;
         const row = Math.floor(index / 2);
-        
+
         // Approximate coordinates in the media pool area
-        const scanX = 84 + (col * 8); 
-        const scanY = 18 + (row * 14); 
+        const scanX = 84 + (col * 8);
+        const scanY = 18 + (row * 14);
 
         tl.to('.sim-cursor', { left: `${scanX}%`, top: `${scanY}%`, duration: 0.3, ease: 'power2.inOut' })
           .to(`.pool-clip-${index}`, { opacity: 1, scale: 1.05, filter: 'brightness(1.5)', duration: 0.1 }, '<')
@@ -202,23 +201,23 @@ const CursorProtocolScheduler = ({ isActive, isDarkMode }) => {
       tl.to('.sim-cursor', { left: '84%', top: '32%', duration: 0.3, ease: 'power2.inOut' })
         .to(`.pool-clip-2`, { opacity: 1, scale: 1.05, filter: 'brightness(1.5)', duration: 0.1 }, '<')
         .to('.sim-cursor', { scale: 0.85, duration: 0.1 })
-        
+
         // Grab clip
         .set('.drag-clip', { opacity: 1, left: '84%', top: '32%' })
         .to('.pool-clip-2', { opacity: 0.2, scale: 1, filter: 'brightness(1)', duration: 0.1 }, '<')
-        
+
         // Drag to timeline
         .to(['.sim-cursor', '.drag-clip'], { left: '46%', top: '75%', duration: 0.8, ease: 'power2.inOut' })
         .to('.timeline-gap', { width: 100, marginLeft: 4, marginRight: 4, duration: 0.4, ease: 'power3.out' }, '-=0.3')
-        
+
         // Drop clip
         .to('.sim-cursor', { scale: 1, duration: 0.1 })
         .to('.drag-clip', { opacity: 0, duration: 0.1 })
         .to('.timeline-inserted-clip', { opacity: 1, scale: 1, duration: 0.2 }, '<')
-        
+
         // Move cursor away
         .to('.sim-cursor', { left: '30%', top: '85%', opacity: 0, duration: 0.6, ease: 'power2.inOut' })
-        
+
         // Reset everything
         .to('.pool-clip-2', { opacity: 0.5, duration: 0.2 }, '+=1')
         .to('.timeline-inserted-clip', { opacity: 0, scale: 0.8, duration: 0.2 }, '<')
@@ -349,10 +348,10 @@ const TerminalPoint = ({ isActive, isDarkMode }) => {
       </div>
 
       <div className={`absolute bottom-8 w-full px-12 flex justify-between items-center text-sm font-data cta-anim transition-colors duration-700 ${isDarkMode ? 'text-white/50' : 'text-textDark/50'}`}>
-        <span>© 2026 Videre Sequence</span>
+        <span></span>
         <div className="flex items-center gap-3">
           <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
-          <span>System Local & Operational</span>
+          <span></span>
         </div>
         <div className="flex gap-6">
           <a href="#" className={`transition-colors duration-300 ${isDarkMode ? 'hover:text-white' : 'hover:text-textDark'}`}>Documentation</a>
@@ -446,9 +445,9 @@ export default function App() {
           `}>
             <div className={`absolute inset-0 bg-gradient-to-br from-transparent ${isDarkMode ? 'to-blue-900/10' : 'to-backgroundDeeper/20'} pointer-events-none`}></div>
             <div className="flex justify-between items-start mb-2 relative z-10">
-              <h2 className="font-heading font-black text-4xl tracking-tight uppercase">THE ENGINE ROOM</h2>
+              <h2 className="font-heading font-black text-4xl tracking-tight uppercase">Intelligent parsing protocols actively engaged</h2>
             </div>
-            <p className={`font-drama italic text-2xl mb-12 transition-colors duration-700 ${isDarkMode ? 'text-white/60' : 'text-textDark/60'}`}>Intelligent parsing protocols actively engaged.</p>
+            <p className={`font-drama italic text-2xl mb-12 transition-colors duration-700 ${isDarkMode ? 'text-white/60' : 'text-textDark/60'}`}></p>
 
             <div className="flex-1 w-full max-w-[420px] mx-auto relative z-10 h-full">
               <DiagnosticShuffler isActive={activeIndex === 1} isDarkMode={isDarkMode} />
@@ -466,9 +465,9 @@ export default function App() {
           `}>
             <div className={`absolute inset-0 bg-gradient-to-br from-transparent ${isDarkMode ? 'to-blue-900/10' : 'to-backgroundDeeper/20'} pointer-events-none`}></div>
             <div className="flex justify-between items-start mb-2 relative z-10">
-              <h2 className="font-heading font-black text-4xl tracking-tight uppercase">THE ENGINE ROOM</h2>
+              <h2 className="font-heading font-black text-4xl tracking-tight uppercase">Semantic Scene Scanning</h2>
             </div>
-            <p className={`font-drama italic text-2xl mb-12 transition-colors duration-700 ${isDarkMode ? 'text-white/60' : 'text-textDark/60'}`}>Semantic Scene Scanning</p>
+            <p className={`font-drama italic text-2xl mb-12 transition-colors duration-700 ${isDarkMode ? 'text-white/60' : 'text-textDark/60'}`}></p>
 
             <div className="flex-1 w-full max-w-[420px] mx-auto relative z-10 h-full">
               <TelemetryTypewriter isActive={activeIndex === 2} isDarkMode={isDarkMode} />
@@ -486,9 +485,9 @@ export default function App() {
           `}>
             <div className={`absolute inset-0 bg-gradient-to-br from-transparent ${isDarkMode ? 'to-blue-900/10' : 'to-backgroundDeeper/20'} pointer-events-none`}></div>
             <div className="flex justify-between items-start mb-2 relative z-10">
-              <h2 className="font-heading font-black text-4xl tracking-tight uppercase">THE ENGINE ROOM</h2>
+              <h2 className="font-heading font-black text-4xl tracking-tight uppercase">B-Roll Auto-Retrieval Sequence</h2>
             </div>
-            <p className={`font-drama italic text-2xl mb-12 transition-colors duration-700 ${isDarkMode ? 'text-white/60' : 'text-textDark/60'}`}>B-Roll Auto-Retrieval Sequence</p>
+            <p className={`font-drama italic text-2xl mb-12 transition-colors duration-700 ${isDarkMode ? 'text-white/60' : 'text-textDark/60'}`}></p>
 
             <div className="flex-1 w-full max-w-4xl mx-auto relative z-10 h-full">
               <CursorProtocolScheduler isActive={activeIndex === 3} isDarkMode={isDarkMode} />
